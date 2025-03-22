@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игровая сцена</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Экран загрузки -->
+        <div id="loading-screen" class="loading-screen">
+            <p>Загрузка...</p>
+        </div>
+
+        <!-- Верхняя панель с кнопкой и никнеймом -->
+        <div class="top-panel">
+            <button class="avatar-btn">
+                <img src="img/avatar1.png" alt="Аватар">
+            </button>
+            <div class="stats">
+                <p id="nickname">Никнейм: ---</p>
+                <p>Уровень: <span id="level">1</span></p>
+                <p>Боевая мощь: <span id="power">0</span></p>
+                <p>Опыт: <span id="xp">0/100</span></p>
+            </div>
+        </div>
+
+        <!-- Основная игровая зона -->
+<div class="game-area">
+    <img id="character-img" src="img/model1.png" alt="Персонаж">
+</div>
+
+        <!-- Нижнее меню (футер) -->
+<nav class="bottom-menu">
+    <button class="menu-btn" onclick="navigateTo('stroy.html')">Строй</button>
+    <button class="menu-btn" onclick="navigateTo('hero.html')">Герои</button>
+    <button class="menu-btn" onclick="navigateTo('batle.html')">Битва</button>
+    <button class="menu-btn" onclick="navigateTo('event.html')">События</button>
+    <button class="menu-btn" onclick="navigateTo('equip.html')">Экип</button>
+</nav>
+
+
+    </div>
+
+    <script>
+        // Убираем экран загрузки через 3 секунды
+        setTimeout(() => {
+            document.getElementById('loading-screen').style.display = 'none';
+        }, 3000);
+
+        // Получаем никнейм из localStorage и отображаем его
+        document.addEventListener('DOMContentLoaded', () => {
+            const nickname = localStorage.getItem('nickname');
+            if (nickname) {
+                document.getElementById('nickname').textContent = `Никнейм: ${nickname}`;
+            }
+        });
+    </script>
+
+    <script>
+        // Функция для перехода на указанные страницы
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
+    
+    <script src="characters.js"></script>
+
+
+</body>
+
+</html>

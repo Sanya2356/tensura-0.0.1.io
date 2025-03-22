@@ -1,0 +1,129 @@
+/* Сбрасываем стандартные стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Убираем скролл */
+}
+
+/* Основной контейнер */
+.container {
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    background: url('img/main-background.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Элементы распределены по вертикали */
+    position: relative;
+}
+
+/* Экран загрузки */
+.loading-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('img/loading.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    color: white;
+    z-index: 10; /* На переднем плане */
+}
+
+/* Верхняя панель с кнопкой */
+.top-panel {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+}
+
+/* Кнопка с аватаром */
+.avatar-btn {
+    width: 60px;
+    height: 60px;
+    border: 3px solid white; /* Бордер вокруг изображения */
+    border-radius: 50%;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    overflow: hidden; /* Ограничение изображения */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px; /* Отступ от статистики */
+}
+
+.avatar-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Статистика (уровень, мощь, опыт) */
+.stats {
+    color: white;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Основная игровая зона */
+.game-area {
+    flex: 1; /* Заполняет оставшееся пространство */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Нижнее меню (футер) */
+.bottom-menu {
+    display: flex;
+    justify-content: space-around; /* Равномерное распределение */
+    padding: 10px 0;
+    background: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон */
+    border-top: 2px solid white; /* Разделительная линия */
+}
+
+/* Круглые кнопки меню */
+.menu-btn {
+    width: 60px;
+    height: 60px;
+    border: 2px solid white;
+    border-radius: 50%;
+    background: transparent;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.menu-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+
+/* Изображение персонажа */
+#character-img {
+    width: 60%; /* Масштабирование по ширине */
+    max-width: 80px; /* Ограничение максимального размера */
+    height: auto; /* Сохраняем пропорции */
+}
+
+
+
+
+
+

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ивенты</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            background: url('img/event.jpg') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Распределяем элементы */
+            padding: 20px;
+        }
+
+        /* Верхняя панель с валютой */
+        .currency-panel {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+
+        .currency-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .currency-item img {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Основной контент */
+        .content {
+            text-align: center;
+            color: rgb(0, 0, 0);
+        }
+
+        .content h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .character-image {
+            width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .button-group button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .button-group button:hover {
+            opacity: 0.8;
+        }
+
+        .spin-btn {
+            background-color: #02f7ff; /* Оранжевый для кнопок */
+            color: white;
+        }
+
+        /* Нижняя панель */
+        .bottom-panel {
+            display: flex;
+            justify-content: space-around;
+            padding-top: 10px;
+        }
+
+        .bottom-panel button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .bottom-panel button:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        
+        <!-- Верхняя панель с валютами -->
+        <div class="currency-panel">
+            <div class="currency-item">
+                <img src="img/silver.jpg" alt="Серебро">
+                <span id="silver">1000</span>
+            </div>
+            <div class="currency-item">
+                <img src="img/gold.jpg" alt="Золото">
+                <span id="gold">1000</span>
+            </div>
+            <div class="currency-item">
+                <img src="img/diamond.jpg" alt="Алмазы">
+                <span id="diamonds">1000</span>
+            </div>
+            <div class="currency-item">
+                <img src="img/ticket.jpg" alt="Билеты">
+                <span id="tickets">1000</span>
+            </div>
+        </div>
+
+        <!-- Основная зона с круткой -->
+        <div class="content">
+            <h2>Получите персонажа!</h2>
+
+            <div class="button-group">
+                <button class="spin-btn" onclick="spin(1)">Крутить x1</button>
+                <button class="spin-btn" onclick="spin(10)">Крутить x10</button>
+            </div>
+        </div>
+
+        <!-- Нижняя панель с навигацией -->
+        <div class="bottom-panel">
+            <button onclick="window.location.href='stroy.html'">Строй</button>
+            <button onclick="window.location.href='hero.html'">Герои</button>
+            <button onclick="window.location.href='batle.html'">Битва</button>
+            <button onclick="window.location.href='event.html'">События</button>
+            <button onclick="window.location.href='equip.html'">Экипировка</button>
+        </div>
+
+        <script src="event.js"></script>
+
+        <script src="currency.js"></script>
+
+        <script src="character.js"></script>
+    </div>
+</body>
+
+</html>

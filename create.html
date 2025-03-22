@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ввод Никнейма</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            background: url('img/background.jpg') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Центрируем элементы */
+            align-items: center;
+            padding: 20px;
+        }
+
+        .character {
+            width: 150px;
+            height: auto;
+            position: absolute; /* Позволяет свободно перемещать */
+            top: 70%;           /* Настройка по вертикали */
+            left: 50%;          /* Настройка по горизонтали */
+            transform: translate(-50%, -50%); /* Центрирование */
+        }
+        
+        input {
+            width: 300px;
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            position: absolute; /* Свободное позиционирование */
+            top: 83%;           /* Положение по вертикали */
+            left: 50%;          /* Положение по горизонтали */
+            transform: translateX(-50%); /* Центрирует по оси X */
+        }
+        
+        button {
+            width: 300px;
+            padding: 10px;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            background: #00f2ff;
+            color: white;
+            cursor: pointer;
+            position: absolute; /* Позволяет перемещать кнопку */
+            top: 90%;           /* Положение по вертикали */
+            left: 50%;          /* Положение по горизонтали */
+            transform: translateX(-50%);
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #21887c;
+        }        
+
+        /* Для более узких экранов (например, мобильных) */
+        @media (max-width: 480px) {
+            .container {
+                max-width: 100%;
+            }
+
+            input, button {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="img/model1.png" alt="Персонаж" class="character">
+        <input id="nickname-input" type="text" placeholder="Введите никнейм">
+<button onclick="startGame()">Начать игру</button>
+    </div>
+</body>
+
+<script>
+    // Сохраняем никнейм и переходим на game.html
+    function startGame() {
+        const nicknameInput = document.getElementById('nickname-input');
+        if (nicknameInput.value.trim() !== "") {
+            localStorage.setItem('nickname', nicknameInput.value.trim());
+            window.location.href = 'game.html';
+        } else {
+            alert('Пожалуйста, введите никнейм!');
+        }
+    }
+</script>
+
+
+</html>
